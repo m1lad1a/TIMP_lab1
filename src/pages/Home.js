@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import "./Home.css";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -35,21 +36,26 @@ const Home = () => {
   if (loading) return <p>Загрузка...</p>;
 
   return (
-    <div>
-      <h1>Объекты критической инфраструктуры</h1>
+    <div className="container">
+      <h1 className="title">Объекты критической инфраструктуры</h1>
+
       <ul>
         {data.map(item => (
           <li key={item.id}>
             <Link to={`/detail/${item.id}`}>
               {item.name} ({item.type})
             </Link>
-            <button onClick={() => deleteItem(item.id)} style={{ marginLeft: "10px" }}>
-              Удалить
+
+            <button className="btn-new" onClick={() => deleteItem(item.id)}>
+            Удалить
             </button>
           </li>
         ))}
       </ul>
-      <Link to="/add">Добавить объект</Link>
+
+      <Link to="/add" className="btn-new btn-center">
+        Добавить объект
+      </Link>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import "./Detail.css";
 
 const Detail = () => {
   const { id } = useParams();
@@ -15,7 +16,6 @@ const Detail = () => {
 
   const [loading, setLoading] = useState(true);
 
-  // загрузка данных
   useEffect(() => {
     axios.get(`https://timp-lab1-vosl.onrender.com/criticalObjects/${id}`)
       .then(res => {
@@ -53,34 +53,18 @@ const Detail = () => {
   if (loading) return <p>Загрузка...</p>;
 
   return (
-    <div>
-      <h1>Редактирование объекта</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="name"
-          value={item.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          name="type"
-          value={item.type}
-          onChange={handleChange}
-          required
-        />
-        <input
-          name="status"
-          value={item.status}
-          onChange={handleChange}
-          required
-        />
-        <input
-          name="riskLevel"
-          value={item.riskLevel}
-          onChange={handleChange}
-          required
-        />
-        <button type="submit">Сохранить</button>
+    <div className="detail-container">
+      <h1 className="detail-title">Редактирование объекта</h1>
+
+      <form className="detail-form" onSubmit={handleSubmit}>
+        <input name="name" value={item.name} onChange={handleChange} required />
+        <input name="type" value={item.type} onChange={handleChange} required />
+        <input name="status" value={item.status} onChange={handleChange} required />
+        <input name="riskLevel" value={item.riskLevel} onChange={handleChange} required />
+
+        <button className="btn-new" type="submit">
+          Сохранить
+        </button>
       </form>
     </div>
   );

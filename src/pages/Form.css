@@ -1,0 +1,48 @@
+.form-container {
+  width: 400px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.form-title {
+  font-family: 'Impact', fantasy, Arial;
+  font-size: 26px;
+  font-weight: 400;
+  color: #ebebeb;
+
+  border: 5px solid #B7C1C3;
+  border-radius: 12px;
+
+  padding: 10px 20px;
+  margin-bottom: 20px;
+
+  background-color: #778283;
+  display: inline-block;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 20px;
+
+  border: 5px solid #B7C1C3;
+  border-radius: 12px;
+
+  background-color: #778283;
+}
+
+.form input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
+.form .btn-new {
+  width: 100%;
+  margin-top: 10px;
+}
