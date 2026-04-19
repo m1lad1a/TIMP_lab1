@@ -8,7 +8,7 @@ const Home = () => {
 
   // загрузка данных
   useEffect(() => {
-    axios.get("http://localhost:5000/criticalObjects")
+    axios.get("https://timp-lab1-vosl.onrender.com/criticalObjects")
       .then(res => {
         setData(res.data);
         setLoading(false);
@@ -22,7 +22,7 @@ const Home = () => {
 
   // удаление
   const deleteItem = (id) => {
-    axios.delete(`http://localhost:5000/criticalObjects/${id}`)
+    axios.delete(`https://timp-lab1-vosl.onrender.com/criticalObjects/${id}`)
       .then(() => {
         setData(data.filter(item => item.id !== id));
       })

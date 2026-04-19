@@ -17,7 +17,7 @@ const Detail = () => {
 
   // загрузка данных
   useEffect(() => {
-    axios.get(`http://localhost:5000/criticalObjects/${id}`)
+    axios.get(`https://timp-lab1-vosl.onrender.com/criticalObjects/${id}`)
       .then(res => {
         setItem(res.data);
         setLoading(false);
@@ -39,7 +39,7 @@ const Detail = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    axios.put(`http://localhost:5000/criticalObjects/${id}`, item)
+    axios.put(`https://timp-lab1-vosl.onrender.com/criticalObjects/${id}`, item)
       .then(() => {
         alert("Обновлено!");
         navigate('/');

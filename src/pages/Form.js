@@ -26,7 +26,7 @@ const Form = () => {
       riskLevel: riskRef.current.value
     };
 
-    axios.post("http://localhost:5000/criticalObjects", newObject)
+    axios.post("https://timp-lab1-vosl.onrender.com/criticalObjects", newObject)
       .then(() => navigate('/'))
       .catch(error => {
         console.error(error);
