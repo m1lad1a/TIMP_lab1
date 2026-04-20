@@ -20,6 +20,7 @@ const Form = () => {
     }
 
     const newObject = {
+      id: Date.now(),
       name: nameRef.current.value,
       type: typeRef.current.value,
       status: statusRef.current.value,
